@@ -51,7 +51,7 @@ def main():
     robot.cord.append( ( 300 , 0 , 0 ) )
 
     #  initial velocity of the robot
-    robot.vel.append( 5.0 )
+    robot.vel.append( 0.0 )
 
     ########################################
     #  determine the difference between the robot and the target
@@ -61,6 +61,8 @@ def main():
     #  save the relative position of the robot and the target
     relativeBot.cord.append( ( relativeX , relativeY , 0 ))
 
+    phi = math.atan2( relativeBot.cord[ 0 ][ 1 ] , relativeBot.cord[ 0 ][ 0 ] )
+    robot.cord[ 0 ] = ( 300 , 0 , phi )
     tempArray = np.array( [ relativeX , relativeY ] )
     error.append( np.linalg.norm( tempArray ) )
 
