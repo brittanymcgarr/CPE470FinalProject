@@ -28,7 +28,7 @@ class targ():
 def main():
     # Initialize variables
     deltaT = 0.5
-    lmbda = 2.0  # used for lambda variable
+    lmbda = 0.25  # used for lambda variable
     velMax = 50  # Max speed for the robot
     error = []
     length = 100
@@ -48,7 +48,7 @@ def main():
     #  robot Initialization
 
     #  initial position of the robot
-    robot.cord.append( ( 200 , 0 , 0 ) )
+    robot.cord.append( ( 300 , 0 , 0 ) )
 
     #  initial velocity of the robot
     robot.vel.append( 5.0 )
@@ -77,6 +77,7 @@ def main():
 
         #  assign the position of the target
         target.cord.append( ( qt_x, qt_y ) )
+
         #####################################
 
         #  get phi variable
@@ -104,7 +105,7 @@ def main():
 
             #  get relative position of robot and target
             relativeX = target.cord[ index ][ 0 ] - robot.cord[ index ][ 0 ]
-            relativeY = target.cord[ index ][ 0 ] - robot.cord[ index ][ 0 ]
+            relativeY = target.cord[ index ][ 1 ] - robot.cord[ index ][ 1 ]
 
             relativeBot.cord.append( ( relativeX , relativeY , 0 ) )
 
@@ -124,7 +125,7 @@ def main():
 
             #  get relative position of robot and target
             relativeX = target.cord[ index ][ 0 ] - robot.cord[ index ][ 0 ]
-            relativeY = target.cord[ index ][ 0 ] - robot.cord[ index ][ 0 ]
+            relativeY = target.cord[ index ][ 1 ] - robot.cord[ index ][ 1 ]
 
             relativeBot.cord.append( ( relativeX , relativeY , 0 ) )
 
