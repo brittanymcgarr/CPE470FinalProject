@@ -62,8 +62,8 @@ class Capture:
         detected = []
         count = 1
 
-        # Search 50 times or until found has been populated
-        while found < 1 and count < 50:
+        # Search 10 times or until found has been populated
+        while found < 1 and count < 10:
             # Capture an image
             self.camera.capture(stream, format='jpeg')
 
@@ -94,7 +94,7 @@ class Capture:
             cv2.rectangle(image, (x, y), (x + width, y + height), (255, 255, 0), 2)
 
         # Save the image as a jpeg with date information
-        date = datetime.datetime.now().strftime("%I%M%p%B%d")
+        date = datetime.datetime.now().strftime("%s%I%M%p%B%d")
         cv2.imwrite("result_" + date + ".jpg", image)
 
         # Return the number of found targets

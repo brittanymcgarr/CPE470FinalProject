@@ -39,7 +39,15 @@ def runSimulation():
         #     found = robot.capture.findTarget()
         #     # Move the bot around in a circle, taking pictures every point until the target is found
 
+	# Quick target confirmation temp code
+	found = robot.capture.findTarget("banana")
+	count = 1
+
+	while found < 1 and count < 20:
+		found = robot.capture.findTarget("banana")
+		count += 1
+
     # Print the graph of the results
-    robot.printGraphs(path="test")
+#    robot.printGraphs(path="test")
 
 runSimulation()

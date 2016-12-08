@@ -15,11 +15,11 @@
 import math
 import numpy
 import numpy.linalg
-import matplotlib.pyplot as plot
-import matplotlib.patches as patches
+#import matplotlib.pyplot as plot
+#import matplotlib.patches as patches
 
 # Camera manager
-# import capture
+import capture
 
 
 class RobotData:
@@ -47,7 +47,7 @@ class RobotData:
         self.relativeHeadings = []
 
         # Initialize the camera data
-        # self.capture = capture.Capture()
+        self.capture = capture.Capture()
         self.targetShape = "faces"
 
     def update(self, timeDiff=0.05, targetPos=None):
@@ -130,20 +130,20 @@ class RobotData:
             self.robotVelocities.append(velocity)
             self.robotHeadings.append(heading)
 
-    def printGraphs(self, path):
+#    def printGraphs(self, path):
         # Create the legend patches
-        targetPatch = patches.Patch(color='red', label="Target Path")
-        robotPatch = patches.Patch(color='green', label="Robot Path")
-        relativePatch = patches.Patch(color='blue', label="Relative Distance")
+#        targetPatch = patches.Patch(color='red', label="Target Path")
+#        robotPatch = patches.Patch(color='green', label="Robot Path")
+#        relativePatch = patches.Patch(color='blue', label="Relative Distance")
 
         # Plot the coordinates of the positions
-        listX = [item[0] for item in self.targetPositions]
-        listY = [item[1] for item in self.targetPositions]
-        botX = [item[0] for item in self.robotPositions]
-        botY = [item[1] for item in self.robotPositions]
+#        listX = [item[0] for item in self.targetPositions]
+#        listY = [item[1] for item in self.targetPositions]
+#        botX = [item[0] for item in self.robotPositions]
+#        botY = [item[1] for item in self.robotPositions]
 
-        plot.plot(listX, listY, 'r.', botX, botY, 'g.')
+#        plot.plot(listX, listY, 'r.', botX, botY, 'g.')
 
-        plot.legend(handles=[targetPatch, robotPatch], loc='best')
-        plot.savefig("Positions_" + path + ".png")
-        plot.show()
+#        plot.legend(handles=[targetPatch, robotPatch], loc='best')
+#        plot.savefig("Positions_" + path + ".png")
+#        plot.show()
